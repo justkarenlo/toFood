@@ -1,0 +1,5 @@
+*.env
+*.yml
+*.yaml
+notes.md
+/images

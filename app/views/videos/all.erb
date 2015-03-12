@@ -1,0 +1,11 @@
+<div class="container">
+
+  <% @lists.each do |list| %>
+    <% list.videos.each do |video| %>
+
+    <iframe width="350" height="197" src="//www.youtube.com/embed/<%= video.unique_id %>" frameborder="0" allowfullscreen></iframe>
+
+    <% end %>
+  <% end %>
+
+</div>

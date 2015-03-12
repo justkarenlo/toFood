@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @list.name %></h1>
+  <br>
+  <% @list.videos.each do |video| %>
+  <div style="display: inline-block; float: left; padding: 5px">
+    <iframe width="350" height="197" src="//www.youtube.com/embed/<%= video.unique_id %>" frameborder="0" allowfullscreen></iframe>
+    <br>
+    <a class="btn btn-warning delete-video" href="/video/<%= video.id %>">Delete</a>
+  </div>
+  <% end %>
+
+
+</div>

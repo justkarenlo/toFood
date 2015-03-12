@@ -1,0 +1,35 @@
+<div class="container">
+
+<% if @error != nil %>
+  <p style="color: red; font-size: 16pt"><%= @error %></p>
+<% end %>
+
+  <form action="/list/new" method="post">
+    <div class="row">
+      <div class="col-md-4">
+    <input class="form-control" type="text" name="list_name" placeholder="List Name"/>
+      </div>
+    <div class="col-md-2">
+    <input class="btn btn-primary" type="submit" value="Add"/>
+  </div>
+</div>
+  </form>
+
+<% @lists.each do |list| %>
+  <div class="whole-list">
+    <h2 style="font-family: Quicksand"><a href="/lists/<%= list.id %>"><%= list.name %></a> <a class="btn btn-danger delete-list" href="/delete/list/<%= list.id %>">delete list</a></h2>
+
+
+  <br>
+  <br>
+  <% list.videos.each do |video| %>
+  <iframe width="350" height="197" src="//www.youtube.com/embed/<%= video.unique_id %>" frameborder="0" allowfullscreen></iframe>
+  <% end %>
+  <br>
+  <br>
+  <br>
+</div>
+<% end %>
+
+
+</div>

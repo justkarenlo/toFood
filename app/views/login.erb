@@ -1,0 +1,42 @@
+<div class="container">
+  <div style="margin-left: auto; margin-right: auto; text-align: center">
+  <br>
+  <br>
+  <br>
+  <div id="login-section">
+  <form action="/login" method="post">
+    <h3>Existing User:</h3>
+    <% if @login_error != nil %>
+    <p style="color: red"><%= @login_error %></p>
+    <% end %>
+
+    <input type="text" name="username" value="<%= @wrong_username %>" placeholder="Username"/>
+    <br>
+    <input type="password" name="password" value="<%= @wrong_password %>" placeholder="Password"/>
+    <br>
+    <br>
+    <input type="submit" value="Sign In!" />
+  </form>
+  <br>
+  <br>
+  <br>
+  <h3>New User:</h3>
+  <% if @register_errors != nil %>
+    <% @register_errors.each do |error| %>
+      <p style="color: red"><%= error %></p>
+    <% end %>
+  <% end %>
+
+  <form action="/register" method="post">
+    <input type="text" name="username" value="<%= @username %>" placeholder="Username"/>
+    <br>
+    <input type="password" name="password" placeholder="Password"/>
+    <br>
+    <br>
+    <input type="submit" value="Register!" />
+  </form>
+</div>
+
+</div>
+
+</div>
